@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8f6" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="For Boba" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>21 Days Until Home</title>
+</head>
+<body>
+  <main class="app-shell">
+    <section id="welcome" class="screen active">
+      <div class="hero">
+        <img src="images/day1.jpg" alt="Us together" class="hero-image" />
+        <div class="hero-overlay"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">For my Boba</p>
+          <h1>21 Days Until Home</h1>
+          <p class="date-range">31 July — 21 August 2026</p>
+        </div>
+      </div>
+
+      <div class="welcome-card">
+        <p class="opening-quote">“No matter where life takes you, you will always be my favourite place to come home to.”</p>
+        <button id="openToday" class="primary-button">Open Today’s Surprise ✨</button>
+        <p class="small-note">A new page unlocks each day.</p>
+      </div>
+    </section>
+
+    <section id="daily" class="screen">
+      <header class="topbar">
+        <button id="backButton" class="icon-button" aria-label="Back">←</button>
+        <div>
+          <p id="dayLabel" class="eyebrow">Day 1 of 21</p>
+          <h2 id="greeting">Good morning, Boba ❤️</h2>
+        </div>
+      </header>
+
+      <article class="daily-card">
+        <img id="dailyImage" src="images/day1.jpg" alt="Today's memory" class="daily-image" />
+
+        <div class="progress-wrap">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <section class="content-section">
+          <span class="section-label">Quote of the day</span>
+          <blockquote id="quoteText"></blockquote>
+        </section>
+
+        <section class="content-section">
+          <span class="section-label">Today’s letter</span>
+          <p id="letterText" class="letter"></p>
+        </section>
+
+        <section class="content-section split">
+          <div>
+            <span class="section-label">Little challenge</span>
+            <p id="challengeText"></p>
+          </div>
+          <div>
+            <span class="section-label">Countdown</span>
+            <p id="countdownText" class="countdown"></p>
+          </div>
+        </section>
+
+        <button id="missYouButton" class="secondary-button">Tap when you miss me 💌</button>
+        <div id="surpriseNote" class="surprise-note" aria-live="polite"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
