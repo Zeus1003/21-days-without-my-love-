@@ -1,24 +1,11 @@
-# 21 Days Until Home
+VERSION 2 — Upload instructions
 
-This is a mobile-friendly Progressive Web App for 31 July to 21 August 2026.
+1. Extract this ZIP.
+2. In your GitHub repository, upload and overwrite the existing website files.
+3. Upload ALL files and folders from this package.
+4. Commit the changes.
+5. GitHub Pages updates automatically after 1–3 minutes.
 
-## Preview on a computer
-Open `index.html`.
-
-## Put it online for free with GitHub Pages
-1. Create a free GitHub account.
-2. Create a new public repository named `for-boba`.
-3. Upload all files and folders from this package.
-4. Open repository **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Choose branch **main** and folder **/(root)**, then Save.
-7. GitHub will provide a public link.
-
-## Add it to an iPhone Home Screen
-1. Open the final link in Safari.
-2. Tap the Share icon.
-3. Tap **Add to Home Screen**.
-4. Rename it and tap **Add**.
-
-## Updating each day
-Replace or add images inside the `images` folder, then edit the corresponding entry in `app.js`.
+The opening animation plays once per Safari session.
+Before 31 July 2026, Day 1 remains locked.
+15 unique photos were supplied; Days 16–21 reuse selected favourites and can be replaced later.
