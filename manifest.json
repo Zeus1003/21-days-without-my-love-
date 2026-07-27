@@ -1,10 +1,10 @@
 {
-  "name": "21 Days Until Home",
+  "name": "21 Days Until Home \u2014 Version 4",
   "short_name": "For Boba",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#fff9f6",
-  "theme_color": "#fff9f6",
+  "theme_color": "#0d1320",
   "icons": [
     {
       "src": "icons/icon-192.png",

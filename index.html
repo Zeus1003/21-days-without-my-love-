@@ -1,4 +1,116 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fff9f6"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="For Boba"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/icon-192.png"><link rel="stylesheet" href="style.css"><title>21 Days Until Home</title></head><body>
-<section id="intro" class="intro"><div class="stars"></div><div id="introText" class="intro-text"></div><div id="plane" class="plane">✈</div><button id="skipIntro" class="skip">Skip</button></section>
-<main id="app" class="app hidden"><section id="welcome" class="screen active"><div class="hero"><img src="images/day1.jpg" class="hero-image" alt="Us together"><div class="hero-overlay"></div><div class="hero-copy"><p class="eyebrow">For my Boba</p><h1>21 Days Until Home</h1><p>31 July — 21 August 2026</p></div></div><div class="welcome-card"><p class="opening-quote">“No matter where life takes you, you will always be my favourite place to come home to.”</p><button id="openToday" class="primary-button">Open Today’s Surprise ✨</button><p id="lockNote" class="small-note">A new page unlocks each day.</p></div></section>
-<section id="daily" class="screen"><header class="topbar"><button id="backButton" class="icon-button">←</button><div><p id="dayLabel" class="eyebrow"></p><h2 id="greeting">Good morning, Boba ❤️</h2></div></header><article class="daily-card"><img id="dailyImage" class="daily-image" alt="Today's memory"><div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div><section class="content-section"><span class="section-label">Quote of the day</span><blockquote id="quoteText"></blockquote></section><section class="content-section"><span class="section-label">Today’s letter</span><p id="letterText" class="letter"></p></section><section class="content-section split"><div><span class="section-label">Little challenge</span><p id="challengeText"></p></div><div><span class="section-label">Countdown</span><p id="countdownText" class="countdown"></p></div></section><section class="wish-box"><span class="section-label">✈ Today’s wish</span><p id="wishText"></p></section><button id="missYouButton" class="secondary-button">Tap when you miss me 💌</button><div id="surpriseNote" class="surprise-note"></div></article></section></main><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="For Boba">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>21 Days Until Home</title>
+</head>
+<body>
+<audio id="backgroundMusic" src="music/our_wish.mp3" preload="auto" loop></audio>
+<button id="musicToggle" class="music-toggle hidden" aria-label="Pause music">♫</button>
+<div id="intro" class="intro">
+  <div class="intro-glow"></div>
+  <div class="stars"></div>
+  <div id="introText" class="intro-text"></div>
+  <div id="plane" class="plane">✈</div>
+  <div id="beginPanel" class="begin-panel">
+    <p class="begin-small">A little journey made only for you</p>
+    <h2>Hi Boba ❤️</h2>
+    <button id="beginExperience" class="begin-button">Tap to begin</button>
+    <p class="sound-note">Best experienced with sound on 🎹</p>
+  </div>
+  <button id="skipIntro" class="ghost-button hidden">Skip</button>
+</div>
+
+<main id="app" class="app hidden">
+  <section id="welcome" class="screen active">
+    <div class="cover">
+      <img src="images/day1.jpg" alt="Us together" class="cover-photo">
+      <div class="cover-shade"></div>
+      <div class="cover-content">
+        <p class="kicker">FOR MY BOBA</p>
+        <h1>21 Days<br>Until Home</h1>
+        <p class="dates">31 July — 21 August 2026</p>
+      </div>
+      <div class="scroll-cue">⌄</div>
+    </div>
+
+    <div class="home-panel">
+      <p class="home-quote">“No matter where life takes you, you will always be my favourite place to come home to.”</p>
+      <div class="wish-chip">✈ One wish, every day</div>
+      <button id="openToday" class="main-button">Open Today’s Surprise</button>
+      <p id="lockNote" class="lock-note">A new page unlocks each morning.</p>
+    </div>
+  </section>
+
+  <section id="daily" class="screen daily-screen">
+    <div id="dailyBackdrop" class="daily-backdrop"></div>
+    <header class="daily-header">
+      <button id="backButton" class="circle-button" aria-label="Back">←</button>
+      <div>
+        <p id="dayLabel" class="kicker muted-kicker"></p>
+        <h2 id="greeting">Good morning, Boba ❤️</h2>
+      </div>
+    </header>
+
+    <article class="memory-card">
+      <div class="image-frame">
+        <img id="dailyImage" class="daily-image" alt="Today's memory">
+        <div class="image-vignette"></div>
+      </div>
+
+      <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+
+      <section class="quote-block">
+        <span class="mini-label">QUOTE OF THE DAY</span>
+        <blockquote id="quoteText"></blockquote>
+      </section>
+
+      <section id="envelopeSection" class="envelope-section">
+        <span class="mini-label">TODAY’S LETTER</span>
+        <button id="envelopeButton" class="envelope-button" aria-label="Open letter">
+          <span class="envelope">
+            <span class="envelope-back"></span>
+            <span class="envelope-paper">For you ❤️</span>
+            <span class="envelope-flap"></span>
+            <span class="envelope-front"></span>
+          </span>
+          <span class="envelope-caption">Tap to open</span>
+        </button>
+        <div id="letterPaper" class="letter-paper">
+          <p id="letterText" class="letter-text"></p>
+          <p class="signature">Always yours,<br>Adhisht ❤️</p>
+        </div>
+      </section>
+
+      <section class="two-column">
+        <div class="soft-card">
+          <span class="mini-label">LITTLE CHALLENGE</span>
+          <p id="challengeText"></p>
+        </div>
+        <div class="soft-card">
+          <span class="mini-label">COUNTDOWN</span>
+          <p id="countdownText" class="countdown"></p>
+        </div>
+      </section>
+
+      <section class="wish-card">
+        <span class="mini-label">✈ TODAY’S WISH</span>
+        <p id="wishText"></p>
+      </section>
+
+      <button id="missYouButton" class="miss-button">Tap when you miss me 💌</button>
+      <div id="surpriseNote" class="surprise-note"></div>
+    </article>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
