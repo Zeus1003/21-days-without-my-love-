@@ -48,3 +48,39 @@ blockquote{font:1.33rem/1.55 Georgia,serif;margin:0}
 .music-toggle.paused{opacity:.65}.music-toggle.paused:after{content:"";position:absolute;width:25px;height:2px;background:white;left:10px;top:21px;transform:rotate(-45deg);border-radius:2px}
 .begin-panel{position:relative;z-index:5;width:min(86%,420px);padding:34px 28px;text-align:center;border:1px solid rgba(255,255,255,.18);border-radius:28px;background:rgba(10,15,25,.36);backdrop-filter:blur(18px);box-shadow:0 30px 80px rgba(0,0,0,.35);transition:.65s ease}
 .begin-panel.hide{opacity:0;transform:translateY(10px) scale(.98);pointer-events:none}.begin-panel h2{font:2.15rem Georgia,serif;color:white;margin:5px 0 22px}.begin-small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}.begin-button{border:0;border-radius:999px;padding:15px 28px;background:linear-gradient(135deg,#e8a1ae,#bd6074);color:white;font-weight:850;box-shadow:0 15px 35px rgba(189,96,116,.32);animation:pulse 2.4s infinite}.sound-note{font-size:.76rem;opacity:.65;margin:15px 0 0}.intro.started .intro-glow{animation:breathe 4s ease-in-out infinite}.intro:not(.started) .intro-text,.intro:not(.started) .plane{display:none}
+
+/* Secret testing control: tap the invisible top-right area 11 times */
+.secret-admin-tap{
+  position:fixed;
+  top:calc(72px + env(safe-area-inset-top));
+  right:0;
+  width:62px;
+  height:62px;
+  z-index:9999;
+  border:0;
+  padding:0;
+  background:transparent;
+  opacity:0;
+  -webkit-tap-highlight-color:transparent;
+}
+.admin-toast{
+  position:fixed;
+  left:50%;
+  bottom:calc(24px + env(safe-area-inset-bottom));
+  z-index:10000;
+  transform:translate(-50%,18px);
+  padding:10px 15px;
+  border-radius:999px;
+  background:rgba(22,20,25,.88);
+  color:#fff;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.04em;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease;
+}
+.admin-toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}

@@ -20,3 +20,11 @@ Safari requires one tap before audio can begin. On the opening screen, tap Begin
 
 TEST DAY 1
 Add ?preview=1 to the end of the site address.
+
+
+SECRET ADMIN TESTING
+- Tap the invisible top-right corner of the screen 11 times.
+- It opens the next day's page.
+- Repeat 11 taps to move forward by another day.
+- After Day 21, it loops back to Day 1.
+- This does not change the normal automatic unlock dates for Hemi.

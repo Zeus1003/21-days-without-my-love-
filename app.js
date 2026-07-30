@@ -146,6 +146,49 @@ document.getElementById("missYouButton").onclick=()=>{
   box.classList.add("show");
 };
 
+
+// Secret admin preview:
+// Tap the invisible top-right corner 11 times to move to the next day.
+const secretAdminTap=document.getElementById("secretAdminTap");
+const adminToast=document.getElementById("adminToast");
+let secretTapCount=0;
+let secretTapResetTimer=null;
+let adminPreviewIndex=null;
+let adminToastTimer=null;
+
+function showAdminToast(index){
+  adminToast.textContent=`Admin preview · Day ${index+1} of 21`;
+  adminToast.classList.add("show");
+  clearTimeout(adminToastTimer);
+  adminToastTimer=setTimeout(()=>adminToast.classList.remove("show"),1600);
+}
+
+secretAdminTap.addEventListener("click",()=>{
+  secretTapCount++;
+  clearTimeout(secretTapResetTimer);
+  secretTapResetTimer=setTimeout(()=>{secretTapCount=0;},5000);
+
+  if(secretTapCount<11)return;
+
+  secretTapCount=0;
+  clearTimeout(secretTapResetTimer);
+
+  if(adminPreviewIndex===null){
+    const current=getDayIndex();
+    adminPreviewIndex=current<0 ? 0 : (current+1)%21;
+  }else{
+    adminPreviewIndex=(adminPreviewIndex+1)%21;
+  }
+
+  renderDay(adminPreviewIndex);
+  document.getElementById("welcome").classList.remove("active");
+  document.getElementById("daily").classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  showAdminToast(adminPreviewIndex);
+
+  if(navigator.vibrate)navigator.vibrate(40);
+});
+
 if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js"));
 }
