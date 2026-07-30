@@ -1,4 +1,4 @@
-const CACHE="boba-v4";
+const CACHE="boba-v4-personal-music-21photos";
 const ASSETS=["./","index.html","style.css","app.js","manifest.json","icons/icon-192.png","icons/icon-512.png","music/our_wish.mp3",
 ...Array.from({length:21},(_,i)=>`images/day${i+1}.jpg`),
 ...Array.from({length:21},(_,i)=>`images/bg${i+1}.jpg`)];

@@ -1,23 +1,22 @@
-VERSION 4 — SAFARI MUSIC EDITION
+21 DAYS UNTIL HOME — VERSION 4 PERSONAL EDITION
 
-WHAT IS NEW
-- Original soft romantic piano soundtrack included
-- Safari-compatible “Tap to begin” screen
-- Music begins only after the first tap, because Safari blocks automatic sound
-- Floating music button to pause and resume
-- Smooth volume fade-in
-- Cinematic intro, envelope letters, daily wishes and countdown retained
+WHAT CHANGED
+- Your selected Paul Yudin piano track is now the soundtrack.
+- All 21 days now use 21 different photos.
+- The six new photos have replaced the repeated images on Days 16–21.
+- The service-worker cache has been updated so Safari downloads the new files.
 
 UPLOAD TO GITHUB
 1. Extract this ZIP.
 2. Open the existing GitHub repository.
-3. Upload all files and folders from inside this package.
-4. Confirm replacement of the existing files and commit.
-5. Wait 1–3 minutes.
-6. Open the website in a Safari Private Window so the old service-worker cache is not used.
+3. Choose Add file > Upload files.
+4. Upload everything inside this extracted folder, including the images and music folders.
+5. Confirm replacement of the existing files and commit the changes.
+6. Wait 2–5 minutes.
+7. Open the live site in a Safari Private tab for the first test.
 
-TEST BEFORE 31 JULY
-Add ?preview=1 to the end of the website address to preview Day 1.
-Example: https://your-site-address/?preview=1
+MUSIC ON SAFARI
+Safari requires one tap before audio can begin. On the opening screen, tap Begin with music. The soundtrack will then fade in and continue in the website.
 
-The included piano composition was generated specifically for this project and does not rely on a downloaded copyrighted song.
+TEST DAY 1
+Add ?preview=1 to the end of the site address.
