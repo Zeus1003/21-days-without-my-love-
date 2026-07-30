@@ -149,7 +149,7 @@ document.getElementById("missYouButton").onclick=()=>{
 
 // Secret admin preview:
 // Tap the invisible top-right corner 11 times to move to the next day.
-const secretAdminTap=document.getElementById("secretAdminTap");
+const secretAdminTap=document.querySelector("h1");
 const adminToast=document.getElementById("adminToast");
 let secretTapCount=0;
 let secretTapResetTimer=null;
