@@ -28,3 +28,13 @@ SECRET ADMIN TESTING
 - Repeat 11 taps to move forward by another day.
 - After Day 21, it loops back to Day 1.
 - This does not change the normal automatic unlock dates for Hemi.
+
+
+SECRET DAY TESTING
+- Open a daily page.
+- Tap the “Tap when you miss me 💌” button 11 times quickly.
+- It advances to the next day.
+- Repeat 11 rapid taps to move forward again.
+- After Day 21, it loops back to Day 1.
+- A normal tap still shows a sweet message.
+- This does not alter Hemi’s real automatic daily unlock.

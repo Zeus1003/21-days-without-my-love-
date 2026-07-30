@@ -138,40 +138,43 @@ document.getElementById("envelopeButton").onclick=()=>{
   setTimeout(()=>paper.classList.add("show"),500);
 };
 
-document.getElementById("missYouButton").onclick=()=>{
+
+const missYouButton=document.getElementById("missYouButton");
+const adminToast=document.getElementById("adminToast");
+let missTapCount=0;
+let missTapResetTimer=null;
+let adminPreviewIndex=null;
+let adminToastTimer=null;
+
+function showSweetMessage(){
   const box=document.getElementById("surpriseNote");
   box.textContent=notes[Math.floor(Math.random()*notes.length)];
   box.classList.remove("show");
   void box.offsetWidth;
   box.classList.add("show");
-};
-
-
-// Secret admin preview:
-// Tap the invisible top-right corner 11 times to move to the next day.
-const secretAdminTap=document.querySelector("h1");
-const adminToast=document.getElementById("adminToast");
-let secretTapCount=0;
-let secretTapResetTimer=null;
-let adminPreviewIndex=null;
-let adminToastTimer=null;
-
-function showAdminToast(index){
-  adminToast.textContent=`Admin preview · Day ${index+1} of 21`;
-  adminToast.classList.add("show");
-  clearTimeout(adminToastTimer);
-  adminToastTimer=setTimeout(()=>adminToast.classList.remove("show"),1600);
 }
 
-secretAdminTap.addEventListener("click",()=>{
-  secretTapCount++;
-  clearTimeout(secretTapResetTimer);
-  secretTapResetTimer=setTimeout(()=>{secretTapCount=0;},5000);
+function showAdminToast(index){
+  adminToast.textContent=`🔒 Admin Preview · Day ${index+1} of 21`;
+  adminToast.classList.add("show");
+  clearTimeout(adminToastTimer);
+  adminToastTimer=setTimeout(()=>adminToast.classList.remove("show"),1800);
+}
 
-  if(secretTapCount<11)return;
+missYouButton.addEventListener("click",()=>{
+  missTapCount++;
+  clearTimeout(missTapResetTimer);
 
-  secretTapCount=0;
-  clearTimeout(secretTapResetTimer);
+  // Wait briefly before treating a tap as a normal "miss me" tap.
+  missTapResetTimer=setTimeout(()=>{
+    if(missTapCount>0 && missTapCount<11)showSweetMessage();
+    missTapCount=0;
+  },1400);
+
+  if(missTapCount<11)return;
+
+  clearTimeout(missTapResetTimer);
+  missTapCount=0;
 
   if(adminPreviewIndex===null){
     const current=getDayIndex();
@@ -188,6 +191,9 @@ secretAdminTap.addEventListener("click",()=>{
 
   if(navigator.vibrate)navigator.vibrate(40);
 });
+
+
+
 
 if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js"));
